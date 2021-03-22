@@ -5,18 +5,55 @@
         <title> Mirage Imaging</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
-    </head>
 
-    <body>
-
-        <script src="main.js"></script>
-        <div class="container">
+        <div class="header">
             <div>
-                <h1>HELLO</h1> 
-                <img src="res/Transcription_Factors.svg" class="dna" alt="dna">
+                <h1>LOGO</h1>
+            </div>
+            <div>
+            </div>
+            <div>
+                <h1>HAMBURGER</h1>
             </div>
         </div>
 
+
+    </head>
+
+    <body>
+        <script>
+        window.onload = function () {
+            lax.init()
+            console.log("Working")
+
+            // Add a driver that we use to control our animations
+            lax.addDriver('scrollY', function () {
+            return window.scrollY
+            })
+
+            // Add animation bindings to elements
+            lax.addElements('.selector', {
+            scrollY: {
+                translateX: [
+                ["elInY", "elCenterY", "elOutY"],
+                [0, 'screenWidth/2', 'screenWidth'],
+                ]
+            }
+            
+            })
+        }
+        </script>
+        <div class="container">
+            <div>
+                <img src="res/Transcription_Factors.svg" class="dna" alt="dna">
+                
+                <img src="res/Wireframe_195.png" class=" bgimage lax lax_preset_slideY:307:172">    
+            </div>
+
+        </div>
+        <div style="height:200px">
+            
+        </div>
 
         <script src="main.js"></script>
     </body>

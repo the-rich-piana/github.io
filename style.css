@@ -22,16 +22,26 @@ div {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inconsolata', monospace;
     width: 100%;
     height: 100%;
+    color:aliceblue;
+
+
+}
+body{
+    background-color: rgb(5, 17, 19);
+
+}
+
+p{
+    color:aliceblue;
+
 
 }
 
 .container{
     height: 100vh;
-
-
 }
 
 .backgroundtext{
@@ -39,14 +49,19 @@ div {
 }
 .bgimage{
     align-self: center;
-    size: cover;
+    max-width: 100%;
     z-index: -1;
 }
 
 .header{
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
     display: grid;
     height: 100px;
     grid-template-columns: repeat(3, 1fr);
+    z-index: 3;
 
 }
 
@@ -54,8 +69,8 @@ div {
     position:absolute;
     size: cover; 
     z-index: 1;
-    height: 140%;
-    max-width:max-content;
+    height: 100%;
+    max-width: 100%;
 }
 /*
 div:nth-child(1){

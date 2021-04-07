@@ -1,0 +1,193 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    &::before, &::after {
+      box-sizing: border-box;
+    }
+
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .example {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: 'Inconsolata', monospace;
+    width: 100%;
+    height: 100%;
+    color:aliceblue;
+
+
+}
+body{
+    background-color: rgb(5, 17, 19);
+
+}
+
+p{
+    color:aliceblue;
+
+
+}
+a{
+    font-family: 'Inconsolata', monospace;
+    width: 100%;
+    height: 100%;
+    color:aliceblue;
+    text-decoration: none;
+}
+
+.container{
+    height: 100vh;
+}
+
+.backgroundtext{
+    z-index: -1;
+}
+.bgimage{
+    align-self: center;
+    max-width: 100%;
+    z-index: -1;
+}
+
+.header{
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    display: grid;
+    height: 100px;
+    grid-template-columns: repeat(3, 1fr);
+    z-index: 3;
+    background-color: rgb(5, 17, 19);
+
+}
+
+.dna{
+    position:absolute;
+    size: cover; 
+    z-index: 1;
+    height: 100%;
+    max-width: 100%;
+}
+
+
+/*
+div:nth-child(1){
+    background-color: aquamarine;
+    background-size: cover;
+
+}
+div:nth-child(2){
+    background-size: cover;
+}
+*/
+
+$white: rgb(179, 179, 179);
+$black: #2e2e2e;
+$gray: #787878;
+$highlight: #ea8478;
+$footer: #f7f7f7;
+
+
+
+ul li {
+  margin: 0 1.5rem 0 0;
+}
+
+#highlight {
+  color: $highlight;
+  font-size: 1.25rem;
+}
+
+.gallery {
+  padding: 0 0 4rem 0;
+}
+
+.img-container {
+  width: 100%;
+  height: 500px;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover .img-content-hover {
+    display: block;
+  }
+}
+
+img {
+	width: 100%;
+  height: 500px;
+	object-fit: cover;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.img-content-hover {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  display: none;
+  padding: 1rem;
+  background: $white;
+  font-weight: 400;
+  margin-top: 1.25rem;
+  margin-left: -2rem;
+}
+
+.title {
+  color: $black;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.category {
+  font-size: 1rem;
+  color: $gray;
+}
+
+.img-content {
+  display: none;
+}
+
+@supports (display: grid) {
+  .gallery .grid {
+    grid-gap: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  img:hover {
+    transform: none;
+  }
+  
+  .img-container {
+    height: 100%;
+    &:hover .img-content-hover {
+      display: none;
+    }
+  }
+
+  .img-content {
+    display: block;
+    padding: 1rem 0;
+  }
+}
